@@ -12,7 +12,10 @@ public class TestMain {
         */
         ApplicationContext context = new ClassPathXmlApplicationContext(
                 "spring.xml");
-        Triangle triangle = (Triangle)context.getBean("triangle");
-        System.out.println(triangle.toString());
+//        Triangle triangle = (Triangle)context.getBean("triangle");
+////        System.out.println(triangle.toString());
+
+        Rectangle rectangle = (Rectangle)context.getBean("rectangle");
+        rectangle.showPoints();
     }
 }
