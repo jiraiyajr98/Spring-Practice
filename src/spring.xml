@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="triangle" class="test.Triangle">
+        <!--    Used for setter field   <property name="user" value="Jiraiya"/>-->
+<!--        <constructor-arg type="java.lang.String" value="Jiraiya"/>-->
+<!--        <constructor-arg type="int" value="22"/>-->
+<!--        <constructor-arg index="0" value="Jiraiya"/>-->
+<!--        <constructor-arg index="1" value="22"/>-->
+        <property name="pointA" ref="point0"/>
+        <property name="pointB" >
+            <bean class="test.Point">
+                <property name="x" value="1"/>
+                <property name="y" value="1"/>
+            </bean>
+        </property>
+        <property name="pointC" ref="point2"/>
+    </bean>
+    
+    <bean id="point0" class="test.Point">
+        <property name="x" value="1"/>
+        <property name="y" value="1"/>
+    </bean>
+
+    <bean id="point2" class="test.Point">
+        <property name="x" value="1"/>
+        <property name="y" value="1"/>
+    </bean>
+
+</beans>
